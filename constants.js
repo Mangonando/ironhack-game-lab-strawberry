@@ -1,2 +1,2 @@
-const WIDTH = 1200;
-const HEIGHT = 800;
+// const WIDTH = 1200;
+// const HEIGHT = 800;
