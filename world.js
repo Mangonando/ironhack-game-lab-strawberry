@@ -9,13 +9,15 @@ Orange = dies
 
 
   class World {
-    constructor(x, y) {
-        this.x;
-        this.y;
+    constructor(x, y, width, height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
     }
     draw() {
         strokeWeight(4);
         noFill()
-        square(30, 20, 250)
+        square(this.x, this.y, this.width)
     }
 }

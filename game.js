@@ -18,19 +18,13 @@ class Game {
     }
     setup() {
         this.player = new Player(0, 0);
-        this.world = new World(250, 250);
+        this.world = new World(30, 20, 250);
 }
     draw() {
         this.player.teleport();
+        // this.player.wall()
         this.player.draw();
         this.world.draw();
-        // strokeWeight(4);
-        // noFill()
-        // rect(this.world.x, this.world.y, 512, 512);
-        // stroke('black')
-        // fill('red')
-        // circle(300, 300, 20);
-        // square(30, 20, 55)
     }
 }
 
