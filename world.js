@@ -9,6 +9,7 @@ Orange = dies
 
 
   class World {
+      worlds = [{color: BLUE}]
     constructor(x, y, width, height) {
         this.x = x;
         this.y = y;
@@ -16,8 +17,13 @@ Orange = dies
         this.height = height;
     }
     draw() {
-        strokeWeight(4);
-        noFill()
-        square(this.x, this.y, this.width)
+        for(let world of this.worlds) {
+            strokeWeight(4);
+            stroke(world.color)
+            noFill()
+            rect(this.x, this.y, this.width, this.height)
+            console.log('world', world)
+        }
+        console.log('sq0', sq(0))
     }
 }

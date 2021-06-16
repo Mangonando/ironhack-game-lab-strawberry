@@ -7,10 +7,20 @@ class Player {
 
     teleport() {
         if (this.x > game.world.x + game.world.width - 0.5*this.diameter) {
-            this.x = game.world.x 
+            console.log("right squaaaaare")
+            this.x = game.world.x + 0.5*this.diameter
         }
-        if (this.x < game.world.x - 0.5*this.diameter) {
-            this.x = game.world.x + game.world.width //figure it out
+        if (this.x < game.world.x + 0.5*this.diameter) {
+            console.log("left squaaaaare")
+            this.x = game.world.x + game.world.width - 0.5*this.diameter
+        }
+        if (this.y > game.world.y + game.world.height - 0.5*this.diameter) {
+            console.log("down squaaaaare")
+            this.y = game.world.y + 0.5*this.diameter
+        }
+        if (this.y < game.world.y + 0.5*this.diameter) {
+            console.log("up squaaaaare")
+            this.y = game.world.y + game.world.height - 0.5*this.diameter
         }
     }
     // wall() {
