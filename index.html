@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Strawberry</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="lives">
+      <span class="circle" id="life-1"></span>
+      <span class="circle" id="life-2"></span>
+      <span class="circle" id="life-3"></span>
+    </div>
     <div id="canvas"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/7.1.0/rxjs.umd.min.js" integrity="sha512-hsXAcKOZ1PjYtQ2xkvR3SAe9JPzaCiV9rnEhbfCxNYoN0jO+wCpW4TIzUGJixujOdX5ihxLjd1htag3PCFnKPw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <div class="blockout" id="game-over">
+      <div class="game-over-text">Game Over</div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
     <script src="constants.js"></script>
     <script src="player.js"></script>
     <script src="world.js"></script>
     <script src="game.js"></script>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
