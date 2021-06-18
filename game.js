@@ -6,19 +6,21 @@ class Game {
     this.lives = 3;
     this.m = 0;
     this.s = 0;
+    this.music;
   }
 
   setup() {
     this.world1 = new World(30, 20, 350, 200);
-    // this.player1 = new Player(this.world1.x + (this.world1.width/2)), (this.world1.y + (this.world1.height/2), 0.25);
-    this.player1 = new Player(205, 120, 0.25);
+    this.player1 = new Player(205, 120, 0.25, 1);
     this.world2 = new World(300, 250, 500, 350);
-    this.player2 = new Player(550, 425, -0.25);
+    this.player2 = new Player(550, 425, 0.25, 0);
     this.world3 = new World(30, 300, 200, 350);
-    this.player3 = new Player(130, 475, 0.5);
+    this.player3 = new Player(130, 475, -0.5, 1);
     this.world4 = new World(850, 80, 350, 500);
-    this.player4 = new Player(1025, 330, -0.5);
-    // this.music = this.music = loadSound('POL-mad-run-short.wav', loaded)
+    this.player4 = new Player(1025, 330, -0.5, 0);
+    this.music = createAudio("POL-mad-run-short.wav");
+    game.music.autoplay(true);
+    // this.music = this.music = loadSound(, loaded)
 
     this.scoreTimer = setInterval(() => {
       console.log("interval", this.s);
@@ -68,13 +70,13 @@ class Game {
         break;
     }
     switch (this.world4.color) {
-        case BLUE:
-          this.player4.teleport(this.world4);
-          break;
-        case ORANGE:
-          this.player4.wall(this.world4);
-          break;
-      }
+      case BLUE:
+        this.player4.teleport(this.world4);
+        break;
+      case ORANGE:
+        this.player4.wall(this.world4);
+        break;
+    }
 
     textSize(32);
     fill("black");

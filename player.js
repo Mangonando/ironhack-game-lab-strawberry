@@ -1,10 +1,10 @@
 class Player {
-  constructor(x, y, gravity) {
-      this.x = x;
-      this.y = y;
+  constructor(x, y, gravity, direction) {
+    this.x = x;
+    this.y = y;
     this.diameter = 25;
     this.gravity = gravity;
-    
+    this.direction = direction;
   }
   teleport(world) {
     if (this.x > world.x + world.width - 0.5 * this.diameter) {
@@ -52,7 +52,12 @@ class Player {
     fill(BLUE);
     stroke(BLUE);
     ellipse(this.x, this.y, this.diameter, this.diameter);
-    this.y = this.y + this.gravity;
+    if (this.direction) {
+      this.y = this.y + this.gravity;
+    } else {
+      this.x = this.x + this.gravity;
+    }
+    // this.x = this.x + this.gravity;
     // this.speed = this.speed + this.gravity;
 
     if (keyIsDown(LEFT_ARROW)) {
