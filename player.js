@@ -1,14 +1,16 @@
 class Player {
   constructor(x, y, gravity) {
-    this.x = world.x + world.width / 2 //Math.floor(Math.random() * 200) + 50;
-    this.y = world.y + world.height / 2 //Math.floor(Math.random() * 200) + 50;
+    // this.x = world.x + (world.width/2)
+    // this.y = world.y + (world.height/2)
     this.diameter = 25;
-    // this.number;
     // this.speed = 0;
     this.gravity = gravity;
     
   }
   teleport(world) {
+    this.x = world.x + (world.width/2)
+    this.y = world.y + (world.height/2)
+
     if (this.x > world.x + world.width - 0.5 * this.diameter) {
       this.x = world.x + 0.5 * this.diameter;
     }
@@ -24,7 +26,6 @@ class Player {
   }
 
   wall(world) {
-    // console.log("wall");
     if (this.x > world.x + world.width - 0.5 * this.diameter) {
       console.log("right squaaaaare");
       this.x = world.x + world.width / 2;

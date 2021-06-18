@@ -2,50 +2,39 @@ class Game {
   constructor() {
     this.score = 0;
     this.timerValue = 0;
-    // this.startButton;
-    // this.timeIt;
-    // this.time = 0;
-    // this.running = 1;
-    // this.music;
+    this.scoreTimer = undefined;
     this.lives = 3;
-    // this.millisecond = millis()
     this.m = 0;
     this.s = 0;
-    this.ms = 1;
   }
 
   setup() {
-    this.world1 = new World(30, 20, 350, 150);
+    this.world1 = new World(30, 20, 350, 200);
     this.player1 = new Player(50, 40, -0.5);
-    this.world2 = new World(350, 250, 500, 250);
-    this.player2 = new Player(400, 300, 0.5);
+    this.world2 = new World(350, 250, 500, 350);
+    this.player2 = new Player(300, 280, 0.5);
+    this.world3 = new World(30, 300, 200, 350);
+    this.player3 = new Player(300, 280, 0.5);
     // this.music = this.music = loadSound('POL-mad-run-short.wav', loaded)
-    setInterval(this.timer,)
-  }
 
-  timer() {
-    this.ms++;
-    if (this.ms % 1000 === 0) {
-      this.ms = 0;
-      this.s++;
-    }
+    this.scoreTimer = setInterval(() => {
+      console.log("interval", this.s);
+      if (this.lives === 0) {
+        clearInterval(this.scoreTimer);
+      } else {
+        this.s++;
+      }
+    }, 1000);
   }
-  // this.ms = millis();
-  // textSize(32);
-  // fill("black");
-  // noStroke();
-  // text("Milliseconds \nrunning: \n" + this.ms, 5, 40);
 
   draw() {
-    this.timerValue;
-    this.timer();
-    //   fullscreen(true)
-
     clear();
     this.player1.draw();
     this.world1.draw();
     this.player2.draw();
     this.world2.draw();
+    this.player3.draw();
+    this.world3.draw();
 
     switch (this.world1.color) {
       case BLUE:
@@ -64,36 +53,21 @@ class Game {
         this.player2.wall(this.world2);
         break;
     }
-    
-    // this.timerValue++;
+
+    switch (this.world3.color) {
+      case BLUE:
+        this.player3.teleport(this.world3);
+        break;
+      case ORANGE:
+        this.player3.wall(this.world3);
+        break;
+    }
+
     textSize(32);
     fill("black");
     noStroke();
-    text(this.s + ` : ` + this.ms, 200, 150);
-    //     if (this.timerValue >= 10) {
-    // text("00:" + this.timerValue, width / 2, height / 2);
-    //     }
-    //     if (this.timerValue < 10) {
-    //       text("00.0" + this.timerValue, width / 2, height / 2);
-    //     }
-    // let millisecond = millis();
-    // textSize(32);
-    // fill('black');
-    // noStroke();
-    // text("00:" + millisecond, 500, 150);
-    // textSize(32);
-    // fill("black");
-    // noStroke();
-
-    // text(this.m, 500, 150);
-    // text(this.s, 550, 150);
-    // text(this.ms, 600, 150);
-    // console.log(`${this.s}:${this.ms}`)
+    text("Score: " + this.s, 520, 150);
   }
-
-  //   millis() {
-  //     text('Milliseconds \nrunning: \n' + millisecond, 5, 40);
-  //   }
 
   livesGone() {
     let currentLives = document.getElementById("life-" + this.lives);
@@ -103,34 +77,14 @@ class Game {
       this.lives--;
     }
     if (this.lives === 0) {
+      this.score = this.s;
+      console.log("score", this.score);
+      let gameOverContent = document.getElementById("game-over-content");
+      gameOverContent.innerHTML = `
+      Your score is: ${this.score}
+      `;
       let gameOver = document.getElementById("game-over");
       gameOver.style.opacity = 10;
     }
   }
-
-  //   timeIt() {
-  //     if (this.timerValue > 0) {
-  //       this.timerValue++;
-  //     }
-  //   }
 }
-//   increment() {
-//       console.log("increment", this.running)
-//     if (this.running == 1) {
-//       setTimeout(function () {
-//         this.time++;
-//         let mins = Math.floor(this.time / 10 / 60);
-//         let secs = Math.floor((this.time / 10) % 60);
-//         let tenths = this.time % 10;
-//         if (mins < 10) {
-//           mins = "0" + mins;
-//         }
-//         if (secs < 10) {
-//           secs = "0" + secs;
-//         }
-//         // document.getElementById("output").innerHTML =
-//         //   mins + ":" + secs + ":" + "0" + tenths;
-//         console.log("time", mins + ":" + secs + ":" + "0" + tenths)
-//         this.increment();
-//       }, 100);
-//     }
