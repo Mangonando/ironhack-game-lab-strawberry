@@ -18,7 +18,7 @@ class Game {
     this.player3 = new Player(130, 475, -0.5, 1);
     this.world4 = new World(850, 80, 350, 500);
     this.player4 = new Player(1025, 330, -0.5, 0);
-    this.music = createAudio("POL-mad-run-short.wav");
+    this.music = createAudio("POL-mad-run-preview.mp3");
     game.music.autoplay(true);
     // this.music = this.music = loadSound(, loaded)
 
