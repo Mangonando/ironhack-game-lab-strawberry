@@ -1,16 +1,12 @@
 class Player {
   constructor(x, y, gravity) {
-    // this.x = world.x + (world.width/2)
-    // this.y = world.y + (world.height/2)
+      this.x = x;
+      this.y = y;
     this.diameter = 25;
-    // this.speed = 0;
     this.gravity = gravity;
     
   }
   teleport(world) {
-    this.x = world.x + (world.width/2)
-    this.y = world.y + (world.height/2)
-
     if (this.x > world.x + world.width - 0.5 * this.diameter) {
       this.x = world.x + 0.5 * this.diameter;
     }

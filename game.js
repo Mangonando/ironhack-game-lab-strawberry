@@ -10,11 +10,14 @@ class Game {
 
   setup() {
     this.world1 = new World(30, 20, 350, 200);
-    this.player1 = new Player(50, 40, -0.5);
-    this.world2 = new World(350, 250, 500, 350);
-    this.player2 = new Player(300, 280, 0.5);
+    // this.player1 = new Player(this.world1.x + (this.world1.width/2)), (this.world1.y + (this.world1.height/2), 0.25);
+    this.player1 = new Player(205, 120, 0.25);
+    this.world2 = new World(300, 250, 500, 350);
+    this.player2 = new Player(550, 425, -0.25);
     this.world3 = new World(30, 300, 200, 350);
-    this.player3 = new Player(300, 280, 0.5);
+    this.player3 = new Player(130, 475, 0.5);
+    this.world4 = new World(850, 80, 350, 500);
+    this.player4 = new Player(1025, 330, -0.5);
     // this.music = this.music = loadSound('POL-mad-run-short.wav', loaded)
 
     this.scoreTimer = setInterval(() => {
@@ -35,6 +38,8 @@ class Game {
     this.world2.draw();
     this.player3.draw();
     this.world3.draw();
+    this.player4.draw();
+    this.world4.draw();
 
     switch (this.world1.color) {
       case BLUE:
@@ -62,6 +67,14 @@ class Game {
         this.player3.wall(this.world3);
         break;
     }
+    switch (this.world4.color) {
+        case BLUE:
+          this.player4.teleport(this.world4);
+          break;
+        case ORANGE:
+          this.player4.wall(this.world4);
+          break;
+      }
 
     textSize(32);
     fill("black");
