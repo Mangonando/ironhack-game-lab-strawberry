@@ -7,17 +7,20 @@
 <br><br>
 
 ## What is SquAAAAre?
+
 <br>
 It is web game designed and developed from scratch. The **goal** is to keep the balls alive for as much time as possible without touching the *orange* walls.
 <br>
 
 ## Rules
+
 <br>
 * Orange = kills
 * Blue = Teleport(to the other side of the square)
 <br>
 
 ## Controls
+
 <br>
 * Left key = Left
 * Right key = Right
@@ -26,17 +29,25 @@ It is web game designed and developed from scratch. The **goal** is to keep the 
 <br>
 
 ## Important Notes
+
 <br>
 * Please, if the screen shows *Game Over*, **refresh the website(Command + R)** and then press any key to start the game again.
 <br>
 
 ## Technologies
+
 <br>
 * Javascript
 * HTML
 * CSS 
 <br>
 
+## To have in mind
+
+<br>
+* Start project locally `npm start`
+* format with prettier `npm run format`
+<br>
 
 ## Try [SquAAAAre](https://mangonando.github.io/squAAAAre/) now!
 

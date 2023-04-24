@@ -17,39 +17,43 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="game">
-      <h1 class="title">SquAAAAre</h1>
-      <div id="lives">
-        <span class="circle" id="life-1"></span>
-        <span class="circle" id="life-2"></span>
-        <span class="circle" id="life-3"></span>
+    <div class="container">
+      <div class="content">
+        <div id="game">
+          <h1 class="title">SquAAAAre</h1>
+          <div id="lives">
+            <span class="circle" id="life-1"></span>
+            <span class="circle" id="life-2"></span>
+            <span class="circle" id="life-3"></span>
+          </div>
+          <div id="canvas"></div>
+          <div id="game-over" class="blockout">
+            <div class="game-over-text">Game Over</div>
+            <div id="game-over-content"></div>
+          </div>
+        </div>
+        <div id="intro">
+          <h1>SquAAAAre</h1>
+          <br />
+          <h3>There are no winners, only losers</h3>
+          <br />
+          <h2>Goal</h2>
+          <p>Keep the balls alive</p>
+          <br />
+          <h2>Rules</h2>
+          <p>Orange = kills</p>
+          <p>Blue = teleport</p>
+          <br />
+          <h2>Controls</h2>
+          <p>Left key = left</p>
+          <p>Right key = right</p>
+          <p>Down key = down</p>
+          <p>Up key = up</p>
+          <br />
+          <br />
+          <h3>Press any KEY to play</h3>
+        </div>
       </div>
-      <div id="canvas"></div>
-      <div class="blockout" id="game-over">
-        <div class="game-over-text">Game Over</div>
-        <div id="game-over-content"></div>
-      </div>
-    </div>
-    <div id="intro">
-      <h1>SquAAAAre</h1>
-      <br />
-      <h3>There are no winners, only losers</h3>
-      <br />
-      <h2>Goal</h2>
-      <p>Keep the balls alive</p>
-      <br />
-      <h2>Rules</h2>
-      <p>Orange = kills</p>
-      <p>Blue = teleport</p>
-      <br />
-      <h2>Controls</h2>
-      <p>Left key = left</p>
-      <p>Right key = right</p>
-      <p>Down key = down</p>
-      <p>Up key = up</p>
-      <br />
-      <br />
-      <h3>Press any KEY to play</h3>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
     <script src="constants.js"></script>

@@ -34,6 +34,9 @@ class Game {
 
   draw() {
     clear();
+    push();
+    translate(WIDTH / 2, HEIGHT / 2);
+
     this.player1.draw();
     this.world1.draw();
     this.player2.draw();
@@ -82,6 +85,8 @@ class Game {
     fill("black");
     noStroke();
     text("Score: " + this.s, 520, 150);
+
+    pop();
   }
 
   livesGone() {

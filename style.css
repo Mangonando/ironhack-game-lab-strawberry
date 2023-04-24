@@ -4,10 +4,10 @@ body * {
 }
 
 div#lives {
-  position: fixed;
-  left: 500px;
-  top: 175px;
+  text-align: center;
+  margin-top: 20px;
 }
+
 div#lives .circle {
   background: rgb(51, 236, 255);
   display: inline-block;
@@ -17,7 +17,26 @@ div#lives .circle {
   border-radius: 25px;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .blockout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   left: 0;
   top: 0;
@@ -30,24 +49,25 @@ div#lives .circle {
 .blockout .game-over-text {
   color: white;
   font-size: 2em;
-  position: absolute;
-  left: 30%;
-  top: 30%;
 }
 
 .title {
-  position: fixed;
-  left: 450px;
-  top: 40px;
+  margin-bottom: 20px;
+}
+
+#canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
 }
 
 #game-over-content {
   color: rgb(51, 236, 255);
   font-size: 2em;
-  position: absolute;
-  left: 30%;
-  top: 35%;
   font-size: 18px;
+  margin-bottom: 20px;
 }
 
 #intro {
