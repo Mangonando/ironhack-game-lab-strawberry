@@ -1,0 +1,24 @@
+{
+  "name": "squAAAAre",
+  "version": "1.0.0",
+  "description": "![logo_newsforu 7](https://res.cloudinary.com/mangonando/image/upload/v1628614936/Screenshot_2021-08-10_at_18.58.49_g5ac1b.png)",
+  "main": "main.js",
+  "scripts": {
+    "start": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mangonando/squAAAAre.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mangonando/squAAAAre/issues"
+  },
+  "homepage": "https://github.com/Mangonando/squAAAAre#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
