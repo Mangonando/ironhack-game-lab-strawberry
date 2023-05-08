@@ -145,34 +145,35 @@ class Game {
 
   livesGone() {
     let currentLives = document.getElementById("life-" + this.lives);
-    console.log("actual live", currentLives);
     if (currentLives) {
       currentLives.style.backgroundColor = ORANGE;
       this.lives--;
     }
     if (this.lives === 0) {
       this.score = this.s;
-      console.log("score", this.score);
       let gameOverContent = document.getElementById("game-over-content");
       gameOverContent.innerHTML = `
       Your score is: ${this.score}
       `;
       let gameOver = document.getElementById("game-over");
       gameOver.style.opacity = 10;
+      gameOver = true;
     }
   }
-}
 
-function setup() {
-  game = new Game();
-  game.setup();
-}
+  startAgain() {
+    this.lives = 3;
+    this.score = 0;
+    this.timerValue = 0;
+    this.s = 0;
+    clearInterval(this.scoreTimer);
 
-function draw() {
-  game.draw();
-}
+    this.setup();
 
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-  game.setup();
+    for (let i = 1; i <= 3; i++) {
+      document.getElementById("life" + 1).style.backgroundColor = BLUE;
+    }
+
+    document.getElementById("game-over").style.opacity = 0;
+  }
 }

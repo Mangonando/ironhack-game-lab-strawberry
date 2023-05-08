@@ -1,4 +1,5 @@
-let pressKey = false;
+let gameStarted = false;
+let gameOver = false;
 
 window.addEventListener(
   "keydown",
@@ -10,11 +11,15 @@ window.addEventListener(
     ) {
       e.preventDefault();
     }
-    if (!pressKey) {
+    if (!gameStarted) {
       document.getElementById("intro").style.display = "none";
       document.getElementById("game").style.display = "block";
       game.setup();
-      pressKey = true;
+      gameStarted = true;
+    } else if (gameOver) {
+      document.getElementById("game-over").style.opacity = 0;
+      game.startAgain();
+      gameOver = false;
     }
   },
   false
@@ -29,7 +34,10 @@ function setup() {
 }
 
 function draw() {
-  if (pressKey) {
+  if (gameStarted) {
     game.draw();
+  }
+  if (game.lives === 0) {
+    gameOver = true;
   }
 }
