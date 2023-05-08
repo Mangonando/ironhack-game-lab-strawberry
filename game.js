@@ -89,14 +89,16 @@ class Game {
   draw() {
     clear();
 
-    this.player1.draw();
-    this.world1.draw();
-    this.player2.draw();
-    this.world2.draw();
-    this.player3.draw();
-    this.world3.draw();
-    this.player4.draw();
-    this.world4.draw();
+    if (this.lives > 0) {
+      this.player1.draw();
+      this.world1.draw();
+      this.player2.draw();
+      this.world2.draw();
+      this.player3.draw();
+      this.world3.draw();
+      this.player4.draw();
+      this.world4.draw();
+    }
 
     switch (this.world1.color) {
       case BLUE:
