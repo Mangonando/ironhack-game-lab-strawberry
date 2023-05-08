@@ -11,56 +11,67 @@ class Game {
 
   setup() {
     createCanvas(windowWidth, windowHeight);
-    translate(windowWidth / 2, windowHeight / 2);
 
-    // let worldWidth = windowWidth * 0.35;
-    // let worldHeight = windowHeight * 0.2;
-    // this.world1 = new World(worldWidth, worldHeight, 350, 200);
-    // this.player1 = new this.Player(
-    //   worldWidth + 205,
-    //   worldHeight + 120,
-    //   0.25,
-    //   1
-    // );
+    this.world1 = new World(
+      windowWidth * 0.015625,
+      windowHeight * 0.01852,
+      windowWidth * 0.182,
+      windowHeight * 0.1852
+    );
+    this.player1 = new Player(
+      windowWidth * 0.10677,
+      windowHeight * 0.1111,
+      0.25,
+      1
+    );
 
-    // worldWidth = windowWidth * 0.3;
-    // worldHeight = windowHeight * 0.25;
-    // this.world1 = new World(worldWidth, worldHeight, 500, 350);
-    // this.player1 = new this.Player(
-    //   worldWidth + 500,
-    //   worldHeight + 425,
-    //   0.25,
-    //   0
-    // );
+    this.world2 = new World(
+      windowWidth * 0.15625,
+      windowHeight * 0.2315,
+      windowWidth * 0.2604,
+      windowHeight * 0.3241
+    );
+    this.player2 = new Player(
+      windowWidth * 0.286,
+      windowHeight * 0.3935,
+      0.25,
+      0
+    );
 
-    // worldWidth = windowWidth * 0.03;
-    // worldHeight = windowHeight * 0.3;
-    // this.world1 = new World(worldWidth, worldHeight, 200, 350);
-    // this.player1 = new this.Player(
-    //   worldWidth + 130,
-    //   worldHeight + 475,
-    //   -0.5,
-    //   1
-    // );
+    this.world3 = new World(
+      windowWidth * 0.015625,
+      windowHeight * 0.2778,
+      windowWidth * 0.1042,
+      windowHeight * 0.3241
+    );
+    this.player3 = new Player(
+      windowWidth * 0.06771,
+      windowHeight * 0.4398,
+      -0.5,
+      1
+    );
 
-    // worldWidth = windowWidth * 0.03;
-    // worldHeight = windowHeight * 0.3;
-    // this.world1 = new World(worldWidth, worldHeight, 200, 350);
-    // this.player1 = new this.Player(
-    //   worldWidth + 130,
-    //   worldHeight + 475,
-    //   -0.5,
-    //   1
-    // );
+    this.world4 = new World(
+      windowWidth * 0.4427,
+      windowHeight * 0.0741,
+      windowWidth * 0.182,
+      windowHeight * 0.463
+    );
+    this.player4 = new Player(
+      windowWidth * 0.534,
+      windowHeight * 0.3056,
+      -0.5,
+      0
+    );
 
-    this.world1 = new World(30, 20, 350, 200);
-    this.player1 = new Player(205, 120, 0.25, 1);
-    this.world2 = new World(300, 250, 500, 350);
-    this.player2 = new Player(550, 425, 0.25, 0);
-    this.world3 = new World(30, 300, 200, 350);
-    this.player3 = new Player(130, 475, -0.5, 1);
-    this.world4 = new World(850, 80, 350, 500);
-    this.player4 = new Player(1025, 330, -0.5, 0);
+    // this.world1 = new World(30, 20, 350, 200);
+    // this.player1 = new Player(205, 120, 0.25, 1);
+    // this.world2 = new World(300, 250, 500, 350);
+    // this.player2 = new Player(550, 425, 0.25, 0);
+    // this.world3 = new World(30, 300, 200, 350);
+    // this.player3 = new Player(130, 475, -0.5, 1);
+    // this.world4 = new World(850, 80, 350, 500);
+    // this.player4 = new Player(1025, 330, -0.5, 0);
 
     this.music = createAudio("POL-mad-run-preview.mp3");
     game.music.autoplay(true);
@@ -77,8 +88,6 @@ class Game {
 
   draw() {
     clear();
-    push();
-    scale(min(windowWidth / 1920, windowHeight / 1080));
 
     this.player1.draw();
     this.world1.draw();
@@ -150,4 +159,18 @@ class Game {
       gameOver.style.opacity = 10;
     }
   }
+}
+
+function setup() {
+  game = new Game();
+  game.setup();
+}
+
+function draw() {
+  game.draw();
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  game.setup();
 }
