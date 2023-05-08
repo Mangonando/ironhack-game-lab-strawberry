@@ -13,39 +13,39 @@ class Game {
     createCanvas(windowWidth, windowHeight);
 
     this.world1 = new World(
-      windowWidth * 0.015625,
+      windowWidth * 0.0156,
       windowHeight * 0.01852,
       windowWidth * 0.182,
       windowHeight * 0.1852
     );
     this.player1 = new Player(
-      windowWidth * 0.10677,
+      windowWidth * 0.1067,
       windowHeight * 0.1111,
       0.25,
       1
     );
 
     this.world2 = new World(
-      windowWidth * 0.15625,
+      windowWidth * 0.1563,
       windowHeight * 0.2315,
       windowWidth * 0.2604,
       windowHeight * 0.3241
     );
     this.player2 = new Player(
-      windowWidth * 0.286,
+      windowWidth * 0.2865,
       windowHeight * 0.3935,
       0.25,
       0
     );
 
     this.world3 = new World(
-      windowWidth * 0.015625,
+      windowWidth * 0.0156,
       windowHeight * 0.2778,
       windowWidth * 0.1042,
       windowHeight * 0.3241
     );
     this.player3 = new Player(
-      windowWidth * 0.06771,
+      windowWidth * 0.0677,
       windowHeight * 0.4398,
       -0.5,
       1
@@ -58,7 +58,7 @@ class Game {
       windowHeight * 0.463
     );
     this.player4 = new Player(
-      windowWidth * 0.534,
+      windowWidth * 0.5339,
       windowHeight * 0.3056,
       -0.5,
       0
