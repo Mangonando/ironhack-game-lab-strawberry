@@ -7,6 +7,7 @@ class Game {
     this.m = 0;
     this.s = 0;
     this.music;
+    this.gameisActive = false;
   }
 
   setup() {
@@ -73,6 +74,8 @@ class Game {
     // this.world4 = new World(850, 80, 350, 500);
     // this.player4 = new Player(1025, 330, -0.5, 0);
 
+    this.gameisActive = true;
+
     this.music = createAudio("POL-mad-run-preview.mp3");
     game.music.autoplay(true);
     // this.music = this.music = loadSound(, loaded)
@@ -135,10 +138,12 @@ class Game {
         break;
     }
 
-    textSize(32);
-    fill("black");
-    noStroke();
-    text("Score: " + this.s, 520, 150);
+    if (this.gameisActive) {
+      textSize(32);
+      fill("black");
+      noStroke();
+      text("Score: " + this.s, 520, 150);
+    }
 
     pop();
   }
@@ -150,6 +155,7 @@ class Game {
       this.lives--;
     }
     if (this.lives === 0) {
+      this.gameisActive = false;
       this.score = this.s;
       let gameOverContent = document.getElementById("game-over-content");
       gameOverContent.innerHTML = `
@@ -162,6 +168,7 @@ class Game {
   }
 
   startAgain() {
+    this.gameisActive = true;
     this.lives = 3;
     this.score = 0;
     this.timerValue = 0;
@@ -171,7 +178,7 @@ class Game {
     this.setup();
 
     for (let i = 1; i <= 3; i++) {
-      document.getElementById("life" + 1).style.backgroundColor = BLUE;
+      document.getElementById("life-" + i).style.backgroundColor = BLUE;
     }
 
     document.getElementById("game-over").style.opacity = 0;

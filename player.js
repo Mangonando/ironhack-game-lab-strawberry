@@ -23,25 +23,21 @@ class Player {
 
   wall(world) {
     if (this.x > world.x + world.width - 0.5 * this.diameter) {
-      console.log("right squaaaaare");
       this.x = world.x + world.width / 2;
       this.y = world.y + world.height / 2;
       game.livesGone();
     }
     if (this.x < world.x + 0.5 * this.diameter) {
-      console.log("left squaaaaare");
       this.x = world.x + world.width / 2;
       this.y = world.y + world.height / 2;
       game.livesGone();
     }
     if (this.y > world.y + world.height - 0.5 * this.diameter) {
-      console.log("down squaaaaare");
       this.x = world.x + world.width / 2;
       this.y = world.y + world.height / 2;
       game.livesGone();
     }
     if (this.y < world.y + 0.5 * this.diameter) {
-      console.log("up squaaaaare");
       this.x = world.x + world.width / 2;
       this.y = world.y + world.height / 2;
       game.livesGone();
